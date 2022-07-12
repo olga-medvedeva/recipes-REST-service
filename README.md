@@ -27,12 +27,12 @@ at least 8 characters and shouldn't be blank. If the fields do not meet these re
 **Example 1: POST /api/recipe/new request without authentication**
 ```
 {
-   "name": "Fresh Mint Tea",<br />
-   "category": "beverage",<br />
-   "description": "Light, aromatic and refreshing beverage, ...",<br />
-   "ingredients": ["boiled water", "honey", "fresh mint leaves"],<br />
+   "name": "Fresh Mint Tea",
+   "category": "beverage",
+   "description": "Light, aromatic and refreshing beverage, ...",
+   "ingredients": ["boiled water", "honey", "fresh mint leaves"],
    "directions": ["Boil water", "Pour boiling hot water into a mug", "Add fresh mint leaves", 
-   "Mix and let the mint leaves seep for 3-5 minutes", "Add honey and mix again"]<br />
+   "Mix and let the mint leaves seep for 3-5 minutes", "Add honey and mix again"]
 }
 ```
 Status code: 401 (Unauthorized)
