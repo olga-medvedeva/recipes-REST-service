@@ -32,8 +32,4 @@ public class RegistrationController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
-    @PostMapping("/actuator/shutdown")
-    public void shutdown() {
-
-    }
 }
