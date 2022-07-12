@@ -1,6 +1,6 @@
 # Backend project using Java + Spring Boot + PostgreSQL.
 
-The program is a multi-user web service based on Spring Boot that allows storing, retrieving, updating, and deleting recipes with authentication.
+### The program is a multi-user web service based on Spring Boot that allows storing, retrieving, updating, and deleting recipes with authentication.
 
 A recipe includes 4 fields: name, category, date, description, ingredients, directions.
 
@@ -25,92 +25,104 @@ at least 8 characters and shouldn't be blank. If the fields do not meet these re
 
 ## Examples
 **Example 1: POST /api/recipe/new request without authentication**
-
-{<br />
+```
+{
    "name": "Fresh Mint Tea",<br />
    "category": "beverage",<br />
    "description": "Light, aromatic and refreshing beverage, ...",<br />
    "ingredients": ["boiled water", "honey", "fresh mint leaves"],<br />
-   "directions": ["Boil water", "Pour boiling hot water into a mug", "Add fresh mint leaves", "Mix and let the mint leaves seep for 3-5 minutes", "Add honey and mix again"]<br />
-}<br />
+   "directions": ["Boil water", "Pour boiling hot water into a mug", "Add fresh mint leaves", 
+   "Mix and let the mint leaves seep for 3-5 minutes", "Add honey and mix again"]<br />
+}
+```
 Status code: 401 (Unauthorized)
 
 **Example 2: POST /api/register request without authentication**
-
-{<br />
-   "email": "Cook_Programmer@somewhere.com",<br />
-   "password": "RecipeInBinary"<br />
-}<br />
+```
+{
+   "email": "Cook_Programmer@somewhere.com",
+   "password": "RecipeInBinary"
+}
+```
 Status code: 200 (Ok)
 
 Further POST /api/recipe/new request with basic authentication; email (login): Cook_Programmer@somewhere.com, and password: RecipeInBinary
-
-{<br />
-   "name": "Mint Tea",<br />
-   "category": "beverage",<br />
-   "description": "Light, aromatic and refreshing beverage, ...",<br />
-   "ingredients": ["boiled water", "honey", "fresh mint leaves"],<br />
-   "directions": ["Boil water", "Pour boiling hot water into a mug", "Add fresh mint leaves", "Mix and let the mint leaves seep for 3-5 minutes", "Add honey and mix again"]<br />
-}<br />
+```
+{
+   "name": "Mint Tea",
+   "category": "beverage",
+   "description": "Light, aromatic and refreshing beverage, ...",
+   "ingredients": ["boiled water", "honey", "fresh mint leaves"],
+   "directions": ["Boil water", "Pour boiling hot water into a mug", "Add fresh mint leaves", 
+   "Mix and let the mint leaves seep for 3-5 minutes", "Add honey and mix again"]
+}
+```
 Response:
-
-{<br />
-   "id": 1<br />
-}<br />
+```
+{
+   "id": 1
+}
+```
 Further PUT /api/recipe/1 request with basic authentication; email (login): Cook_Programmer@somewhere.com, password: RecipeInBinary
-
-{<br />
-   "name": "Fresh Mint Tea",<br />
-   "category": "beverage",<br />
-   "description": "Light, aromatic and refreshing beverage, ...",<br />
-   "ingredients": ["boiled water", "honey", "fresh mint leaves"],<br />
-   "directions": ["Boil water", "Pour boiling hot water into a mug", "Add fresh mint leaves", "Mix and let the mint leaves seep for 3-5 minutes", "Add honey and mix again"]<br />
-}<br />
+```
+{
+   "name": "Fresh Mint Tea",
+   "category": "beverage",
+   "description": "Light, aromatic and refreshing beverage, ...",
+   "ingredients": ["boiled water", "honey", "fresh mint leaves"],
+   "directions": ["Boil water", "Pour boiling hot water into a mug", "Add fresh mint leaves", 
+   "Mix and let the mint leaves seep for 3-5 minutes", "Add honey and mix again"]
+}
+```
 Status code: 204 (No Content)
 
 Further GET /api/recipe/1 request with basic authentication; email (login): Cook_Programmer@somewhere.com, password: RecipeInBinary
 
 Response:
-
-{<br />
-   "name": "Fresh Mint Tea",<br />
-   "category": "beverage",<br />
-   "date": "2020-01-02T12:11:25.034734",<br />
-   "description": "Light, aromatic and refreshing beverage, ...",<br />
-   "ingredients": ["boiled water", "honey", "fresh mint leaves"],<br />
-   "directions": ["Boil water", "Pour boiling hot water into a mug", "Add fresh mint leaves", "Mix and let the mint leaves seep for 3-5 minutes", "Add honey and mix again"]<br />
-}<br />
+```
+{
+   "name": "Fresh Mint Tea",
+   "category": "beverage",
+   "date": "2020-01-02T12:11:25.034734",
+   "description": "Light, aromatic and refreshing beverage, ...",
+   "ingredients": ["boiled water", "honey", "fresh mint leaves"],
+   "directions": ["Boil water", "Pour boiling hot water into a mug", "Add fresh mint leaves", 
+   "Mix and let the mint leaves seep for 3-5 minutes", "Add honey and mix again"]
+}
+```
 
 **Example 3: POST /api/register request without authentication**
-
-{<br />
-   "email": "CamelCaseRecipe@somewhere.com",<br />
-   "password": "C00k1es."<br />
-}<br />
-
+```
+{
+   "email": "CamelCaseRecipe@somewhere.com",
+   "password": "C00k1es."
+}
+```
 Status code: 200 (Ok)
 
 Further response for the GET /api/recipe/1 request with basic authentication; email (login): CamelCaseRecipe@somewhere.com, password: C00k1es.
-
-{<br />
-   "name": "Fresh Mint Tea",<br />
-   "category": "beverage",<br />
-   "date": "2020-01-02T12:11:25.034734",<br />
-   "description": "Light, aromatic and refreshing beverage, ...",<br />
-   "ingredients": ["boiled water", "honey", "fresh mint leaves"],<br />
-   "directions": ["Boil water", "Pour boiling hot water into a mug", "Add fresh mint leaves", "Mix and let the mint leaves seep for 3-5 minutes", "Add honey and mix again"]<br />
-}<br />
-
+```
+{
+   "name": "Fresh Mint Tea",
+   "category": "beverage",
+   "date": "2020-01-02T12:11:25.034734",
+   "description": "Light, aromatic and refreshing beverage, ...",
+   "ingredients": ["boiled water", "honey", "fresh mint leaves"],
+   "directions": ["Boil water", "Pour boiling hot water into a mug", "Add fresh mint leaves", 
+   "Mix and let the mint leaves seep for 3-5 minutes", "Add honey and mix again"]
+}
+```
 Further PUT /api/recipe/1 request with basic authentication; email (login): CamelCaseRecipe@somewhere.com, password: C00k1es.
-
-{<br />
-   "name": "Warming Ginger Tea",<br />
-   "category": "beverage",<br />
-   "description": "Ginger tea is a warming drink for cool weather, ...",<br />
-   "ingredients": ["1 inch ginger root, minced", "1/2 lemon, juiced", "1/2 teaspoon manuka honey"],<br />
-   "directions": ["Place all ingredients in a mug and fill with warm water (not too hot so you keep the beneficial honey compounds in tact)", "Steep for 5-10 minutes", "Drink and enjoy"]<br />
-}<br />
-
+```
+{
+   "name": "Warming Ginger Tea",
+   "category": "beverage",
+   "description": "Ginger tea is a warming drink for cool weather, ...",
+   "ingredients": ["1 inch ginger root, minced", "1/2 lemon, juiced", "1/2 teaspoon manuka honey"],
+   "directions": ["Place all ingredients in a mug and fill with warm water (not too hot so you keep the beneficial 
+   honey compounds in tact)", "Steep for 5-10 minutes", "Drink and enjoy"]
+}
+```
 Status code: 403 (Forbidden)
 
 Further DELETE /api/recipe/1 request with basic authentication; email (login): CamelCaseRecipe@somewhere.com, password: C00k1es.
