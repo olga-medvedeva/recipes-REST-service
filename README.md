@@ -2,7 +2,7 @@
 
 ### The program is a multi-user web service based on Spring Boot that allows storing, retrieving, updating, and deleting recipes with authentication.
 
-A recipe includes 4 fields: name, category, date, description, ingredients, directions.
+A recipe includes 6 fields: name, category, date, description, ingredients, directions.
 
 Service has following fuctionality:
 - POST /api/recipe/new receives a recipe as a JSON object and returns a JSON object with one id field;
