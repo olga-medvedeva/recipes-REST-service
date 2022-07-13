@@ -1,6 +1,6 @@
 # Backend project using Java + Spring Boot + PostgreSQL.
 
-### The program is a multi-user web service based on Spring Boot that allows storing, retrieving, updating, and deleting recipes with authentication.
+### Multi-user web service based on Spring Boot that allows storing, retrieving, updating, and deleting recipes with authentication.
 
 A recipe includes 6 fields: name, category, date, description, ingredients, directions.
 
